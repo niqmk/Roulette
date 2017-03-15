@@ -58,7 +58,7 @@ Begin VB.Form fSplash
       Begin VB.Label lbMain 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Roulette System Quicky"
+         Caption         =   "THE MATRIX"
          BeginProperty Font 
             Name            =   "Times New Roman"
             Size            =   9
@@ -73,12 +73,12 @@ Begin VB.Form fSplash
          Left            =   2160
          TabIndex        =   3
          Top             =   240
-         Width           =   1785
+         Width           =   1155
       End
       Begin VB.Label lbMain 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Version 1.6"
+         Caption         =   "Version 2.0"
          BeginProperty Font 
             Name            =   "Times New Roman"
             Size            =   9

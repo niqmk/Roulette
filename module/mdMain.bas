@@ -7,11 +7,7 @@ Sub Main()
     SetInitial
     
     fSplash.Show vbModal
-    'fLogin.Show vbModal
-    
-    'If BLogin Then
-        fMain.Show
-    'End If
+    fMain.Show
 End Sub
 
 Private Sub SetInitial()
