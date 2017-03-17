@@ -1,6 +1,11 @@
 Attribute VB_Name = "mdApp"
 Option Explicit
 
+Public Enum WinLossBox
+    WIN
+    LOSS
+End Enum
+
 Public Const LRed As Long = &HFF&
 Public Const LLRed As Long = &H8080FF
 Public Const LBlack As Long = &H0&
@@ -8,6 +13,9 @@ Public Const LGreen As Long = &HC000&
 Public Const LLGreen As Long = &H80FF80
 Public Const LBlue As Long = &HFF0000
 Public Const LLBlue As Long = &HFFFF80
+
+Public Const SBlackText As String = "BLACK"
+Public Const SRedText As String = "RED"
 
 Public Const IBlank As Integer = -1
 Public Const IRowMax As Integer = 20
@@ -18,9 +26,19 @@ Public Const INone As Integer = 0
 Public Const ITick As Integer = 1
 Public Const ICross As Integer = 2
 
+Public Const IBlack1Type As Integer = 1
+Public Const IBlack2Type As Integer = 1
+
 Public LColorPattern() As Long
 Public INumberRollBoard() As Integer
 Public IBlack1RollBoard() As Integer
+Public IBlack2RollBoard() As Integer
+Public IBlack3RollBoard() As Integer
+Public IBlack4RollBoard() As Integer
+Public IBlack1RollPattern() As Integer
+Public IBlack2RollPattern() As Integer
+Public IBlack3RollPattern() As Integer
+Public IBlack4RollPattern() As Integer
 Public IRollB1Pattern() As Integer
 Public IRollB2Pattern() As Integer
 Public IRollB3Pattern() As Integer
@@ -32,16 +50,27 @@ Public BBlack2LastFocus(65335) As Boolean
 Public BBlack3LastFocus(65335) As Boolean
 Public BBlack4LastFocus(65335) As Boolean
 
-Private IBlack1Score As Integer
-Private IBlack2Score As Integer
-Private IBlack3Score As Integer
-Private IBlack4Score As Integer
+Public IBlack1Box(11) As Integer
+Public IBlack2Box(11) As Integer
+Public IBlack3Box(11) As Integer
+Public IBlack4Box(11) As Integer
+
+Public IBlack1Score As Integer
+Public IBlack2Score As Integer
+Public IBlack3Score As Integer
+Public IBlack4Score As Integer
+
+Public IBlack1Focus As Integer
+
+Public BBlack1 As Boolean
+
 Private IWin As Integer
 Private ILoss As Integer
 
 Public Sub Init()
     InitColorPattern
     InitRollBoard
+    InitRollPattern
     
     ICounterRollDec = IMax
     
@@ -49,6 +78,8 @@ Public Sub Init()
     IBlack2Score = IBlank
     IBlack3Score = IBlank
     IBlack4Score = IBlank
+    
+    IBlack1Focus = 0
 End Sub
 
 Public Sub SetNumberRollBoard(ByVal IValue As Integer, Optional ByVal BTable As Boolean = True)
@@ -104,9 +135,32 @@ End Sub
 Public Sub InitRollBoard()
     ReDim INumberRollBoard(0) As Integer
     ReDim IBlack1RollBoard(0) As Integer
+    ReDim IBlack2RollBoard(0) As Integer
+    ReDim IBlack3RollBoard(0) As Integer
+    ReDim IBlack4RollBoard(0) As Integer
     
     INumberRollBoard(0) = IBlank
     IBlack1RollBoard(0) = IBlank
+    IBlack2RollBoard(0) = IBlank
+    IBlack3RollBoard(0) = IBlank
+    IBlack4RollBoard(0) = IBlank
+End Sub
+
+Public Sub InitRollPattern()
+    ReDim IBlack1RollPattern(0) As Integer
+    ReDim IBlack2RollPattern(0) As Integer
+    ReDim IBlack3RollPattern(0) As Integer
+    ReDim IBlack4RollPattern(0) As Integer
+    
+    IBlack2RollPattern(0) = IBlank
+    IBlack2RollPattern(0) = IBlank
+    IBlack3RollPattern(0) = IBlank
+    IBlack4RollPattern(0) = IBlank
+    
+    IWin = 0
+    ILoss = 0
+    
+    BBlack1 = False
 End Sub
 
 Public Sub SetBlack1RollBoard(ByVal IValue As Integer)
@@ -115,4 +169,70 @@ Public Sub SetBlack1RollBoard(ByVal IValue As Integer)
     End If
     
     IBlack1RollBoard(UBound(IBlack1RollBoard)) = IValue
+End Sub
+
+Public Sub SetBlack1Pattern(ByVal IValue As Integer)
+    If UBound(IBlack1RollPattern) = 0 And (IBlack1RollPattern(UBound(IBlack1RollPattern)) = IBlank) Then
+        IBlack1RollPattern(UBound(IBlack1RollPattern)) = IValue
+    Else
+        ReDim Preserve IBlack1RollPattern(UBound(IBlack1RollPattern) + 1) As Integer
+        
+        IBlack1RollPattern(UBound(IBlack1RollPattern)) = IValue
+    End If
+End Sub
+
+Public Sub SetBlack1Box(ByVal IType As WinLossBox)
+    If IType = WIN Then
+        If IBlack1Box(1) > 0 Then
+            IBlack1Box(1) = IBlack1Box(1) - 1
+        Else
+            IBlack1Box(0) = IBlack1Box(0) + 1
+        End If
+        
+        If IBlack1Box(0) > IBlack1Box(2) Then IBlack1Box(2) = IBlack1Box(0)
+    ElseIf IType = LOSS Then
+        If IBlack1Box(0) > 0 Then
+            IBlack1Box(0) = IBlack1Box(0) - 1
+        Else
+            IBlack1Box(1) = IBlack1Box(1) + 1
+        End If
+        
+        If IBlack1Box(1) > IBlack1Box(3) Then IBlack1Box(3) = IBlack1Box(1)
+    End If
+    
+    If (IBlack1Box(0) = 0) And (IBlack1Box(1) = 0) Then
+        Dim ICounter As Integer
+        
+        For ICounter = 2 To UBound(IBlack1Box)
+            IBlack1Box(ICounter) = 0
+        Next ICounter
+    Else
+        IBlack1Box(4) = IBlack1Box(4) + 1
+    End If
+End Sub
+
+Public Function CheckFocus(ByVal IType As Integer) As Integer
+    If IType = IBlack1Type Then
+        CheckFocus = IBlack1Focus
+    End If
+End Function
+
+Public Function CheckBlack() As Boolean
+    CheckBlack = BBlack1
+End Function
+
+Public Sub SetWinLoss(Optional ByVal BWin As Boolean = False)
+    If BWin Then
+        If ILoss > 0 Then
+            ILoss = ILoss - 1
+        Else
+            IWin = IWin + 1
+        End If
+    Else
+        If IWin > 0 Then
+            IWin = IWin - 1
+        Else
+            ILoss = ILoss + 1
+        End If
+    End If
 End Sub

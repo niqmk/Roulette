@@ -22,10 +22,10 @@ Begin VB.Form fMain
       BackColor       =   &H00F0F0F0&
       Caption         =   "BET"
       Height          =   1455
-      Left            =   5040
+      Left            =   4920
       TabIndex        =   141
       Top             =   7200
-      Width           =   2055
+      Width           =   2295
       Begin VB.Label lbBet 
          Alignment       =   2  'Center
          BackColor       =   &H00F0F0F0&
@@ -39,11 +39,51 @@ Begin VB.Form fMain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   375
-         Index           =   3
-         Left            =   2520
-         TabIndex        =   145
+         Index           =   0
+         Left            =   120
+         TabIndex        =   170
+         Top             =   240
+         Width           =   2055
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label lbBet 
+         Alignment       =   2  'Center
+         BackColor       =   &H00F0F0F0&
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Index           =   1
+         Left            =   120
+         TabIndex        =   169
          Top             =   600
-         Width           =   375
+         Width           =   2055
+         WordWrap        =   -1  'True
+      End
+      Begin VB.Label lbBet 
+         Alignment       =   2  'Center
+         BackColor       =   &H00F0F0F0&
+         BeginProperty Font 
+            Name            =   "Times New Roman"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Index           =   2
+         Left            =   120
+         TabIndex        =   168
+         Top             =   960
+         Width           =   2055
          WordWrap        =   -1  'True
       End
    End
@@ -974,7 +1014,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   168
+         TabIndex        =   167
          Top             =   600
          Width           =   495
       End
@@ -986,7 +1026,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   167
+         TabIndex        =   166
          Top             =   960
          Width           =   495
       End
@@ -998,7 +1038,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   166
+         TabIndex        =   165
          Top             =   1320
          Width           =   495
       End
@@ -1010,7 +1050,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   165
+         TabIndex        =   164
          Top             =   1680
          Width           =   495
       End
@@ -1022,7 +1062,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   164
+         TabIndex        =   163
          Top             =   2040
          Width           =   495
       End
@@ -1034,7 +1074,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   163
+         TabIndex        =   162
          Top             =   2400
          Width           =   495
       End
@@ -1046,7 +1086,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   162
+         TabIndex        =   161
          Top             =   2760
          Width           =   495
       End
@@ -1058,7 +1098,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   161
+         TabIndex        =   160
          Top             =   3120
          Width           =   495
       End
@@ -1070,7 +1110,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   160
+         TabIndex        =   159
          Top             =   3480
          Width           =   495
       End
@@ -1082,7 +1122,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   159
+         TabIndex        =   158
          Top             =   3840
          Width           =   495
       End
@@ -1094,7 +1134,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   158
+         TabIndex        =   157
          Top             =   4200
          Width           =   495
       End
@@ -1106,7 +1146,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   157
+         TabIndex        =   156
          Top             =   4560
          Width           =   495
       End
@@ -1118,7 +1158,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   156
+         TabIndex        =   155
          Top             =   4920
          Width           =   495
       End
@@ -1130,7 +1170,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   155
+         TabIndex        =   154
          Top             =   5280
          Width           =   495
       End
@@ -1142,7 +1182,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   154
+         TabIndex        =   153
          Top             =   5640
          Width           =   495
       End
@@ -1154,7 +1194,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   153
+         TabIndex        =   152
          Top             =   6000
          Width           =   495
       End
@@ -1166,7 +1206,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   152
+         TabIndex        =   151
          Top             =   6360
          Width           =   495
       End
@@ -1178,7 +1218,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   151
+         TabIndex        =   150
          Top             =   6720
          Width           =   495
       End
@@ -1190,7 +1230,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   150
+         TabIndex        =   149
          Top             =   7080
          Width           =   495
       End
@@ -1202,7 +1242,7 @@ Begin VB.Form fMain
          Left            =   3840
          ScaleHeight     =   375
          ScaleWidth      =   495
-         TabIndex        =   149
+         TabIndex        =   148
          Top             =   7440
          Width           =   495
       End
@@ -1961,7 +2001,7 @@ Begin VB.Form fMain
          Height          =   240
          Index           =   0
          Left            =   3720
-         TabIndex        =   148
+         TabIndex        =   147
          Top             =   120
          Width           =   855
       End
@@ -2445,7 +2485,7 @@ Begin VB.Form fMain
       Height          =   375
       Index           =   2
       Left            =   6120
-      TabIndex        =   147
+      TabIndex        =   146
       Top             =   6120
       Width           =   975
    End
@@ -2464,7 +2504,7 @@ Begin VB.Form fMain
       Height          =   375
       Index           =   1
       Left            =   5040
-      TabIndex        =   146
+      TabIndex        =   145
       Top             =   6120
       Width           =   855
    End
@@ -2657,6 +2697,10 @@ Private Sub cdRoll_Click(Index As Integer)
     SetRoll Index
 End Sub
 
+Private Sub cdDelete_Click()
+    SetDelete
+End Sub
+
 Private Sub SetInitial()
     Dim ICounter As Integer
     
@@ -2684,12 +2728,72 @@ Private Sub SetRoll(ByVal IRoll As Integer, Optional ByVal BAlert As Boolean = T
     If IRoll > mdApp.INumberMax Then Exit Sub
     
     SetBoardPattern IRoll, BAlert
-    SetRollBoard
+    
+    SetBetText False, BAlert
+    
+    If BAlert Then
+        SetRollBoard
+    End If
     
     mdAPI.Beep 300, 50
     
     Me.lbCount(0).Caption = " " & Format(UBound(mdApp.INumberRollBoard) + 1, "#,##0")
     Me.lbCount(1).Caption = "$ " & Format(mdApp.ICounterRollDec, "#,##0")
+End Sub
+
+Private Sub SetRollFocus()
+    Dim IBlackFocus As Integer
+    Dim IEvenFocus As Integer
+    Dim IHighFocus As Integer
+    Dim ICounter As Integer
+    Dim ICDraw As Integer
+
+    IBlack1Focus = mdApp.CheckFocus(IBlack1Type)
+    If IBlack1Focus = 1 Then
+        IBlack1Focus = 5
+    ElseIf IBlack1Focus > 1 Then
+        If IBlack1Focus >= (mdApp.IRowMax - 5) Then
+            IBlack1Focus = (mdApp.IRowMax - 1)
+        Else
+            IBlack1Focus = 5 + (IBlack1Focus - 1)
+        End If
+    End If
+    
+    If mdApp.CheckBlack Then
+        If (UBound(mdApp.INumberRollBoard) - IBlackFocus) >= 0 Then
+            If UBound(mdApp.INumberRollBoard) >= mdApp.IRowMax Then
+                ICDraw = mdApp.IRowMax - 1
+            Else
+                ICDraw = UBound(mdApp.INumberRollBoard)
+            End If
+            
+            For ICounter = UBound(mdApp.INumberRollBoard) To (UBound(mdApp.INumberRollBoard) - IBlackFocus) Step -1
+                mdApp.BBlack1LastFocus(ICounter) = True
+                
+                If mdApp.INumberRollBoard(ICounter) = mdApp.INone Then
+                    mdApp.IRollB1Pattern(ICounter) = INone
+                    
+                    Set Me.pcBlack(ICDraw).Picture = Me.pcNoneFocus
+                Else
+                    If mdApp.LColorPattern(mdApp.INumberRollBoard(ICounter)) = mdApp.LGreen Then
+                        mdApp.IRollB1Pattern(ICounter) = INone
+                        
+                        Set Me.pcBlack(ICDraw).Picture = Me.pcNoneFocus
+                    ElseIf mdApp.LColorPattern(mdApp.INumberRollBoard(ICounter)) = mdApp.LRed Then
+                        mdApp.IRollB1Pattern(ICounter) = ICross
+                        
+                        Set Me.pcBlack(ICDraw).Picture = Me.pcCrossFocus
+                    ElseIf mdApp.LColorPattern(mdApp.INumberRollBoard(ICounter)) = mdApp.LBlack Then
+                        mdApp.IRollB1Pattern(ICounter) = ITick
+                        
+                        Set Me.pcBlack(ICDraw).Picture = Me.pcTickFocus
+                    End If
+                End If
+                
+                ICDraw = ICDraw - 1
+            Next ICounter
+        End If
+    End If
 End Sub
 
 Private Sub SetRollBoard()
@@ -2771,9 +2875,65 @@ Private Sub SetBoardPattern(ByVal IRoll As Integer, Optional ByVal BAlert As Boo
     
      If mdApp.LColorPattern(IRoll) = mdApp.LRed Then
         mdApp.SetBlack1RollBoard mdApp.ICross
+        mdApp.SetBlack1Pattern mdApp.ICross
+        
+        mdApp.SetBlack1Box LOSS
     ElseIf LColorPattern(IRoll) = mdApp.LBlack Then
         mdApp.SetBlack1RollBoard mdApp.ITick
+        mdApp.SetBlack1Pattern mdApp.ITick
+        
+        mdApp.SetBlack1Box WIN
     ElseIf LColorPattern(IRoll) = mdApp.LGreen Then
         mdApp.SetBlack1RollBoard mdApp.INone
+        mdApp.SetBlack1Pattern mdApp.INone
+        
+        mdApp.SetBlack1Box WIN
     End If
+End Sub
+
+Private Sub SetBetText(Optional ByVal BClear As Boolean = True, Optional ByVal BAlert As Boolean = True)
+    Dim ICounter As Integer
+    
+    If BAlert Then
+        For ICounter = 0 To Me.lbBet.Count - 1
+            Me.lbBet(ICounter).Caption = ""
+        Next ICounter
+    End If
+    
+    If BClear Then
+    Else
+        Dim SPattern() As String
+        
+        SPattern = Split(mdPattern.CheckPattern(BAlert), vbCrLf)
+        
+        If BAlert Then
+            For ICounter = 0 To Me.lbBet.Count - 1
+                Me.lbBet(ICounter).Caption = SPattern(ICounter)
+            Next ICounter
+        End If
+    End If
+End Sub
+
+Private Sub SetDelete()
+    Dim ICounter As Integer
+    
+    For ICounter = 0 To mdApp.IRowMax - 1
+        Me.lbRoll(ICounter).Caption = ""
+        
+        Set Me.pcBlack(ICounter).Picture = LoadPicture
+        Set Me.pcBlack2(ICounter).Picture = LoadPicture
+        Set Me.pcBlack3(ICounter).Picture = LoadPicture
+        Set Me.pcBlack4(ICounter).Picture = LoadPicture
+    Next ICounter
+    
+    mdApp.InitRollBoard
+    mdApp.InitRollPattern
+    
+    SetBetText
+    SetRollFocus
+    
+    mdApp.ICounterRollDec = mdApp.IMax
+    
+    Me.lbCount(0).Caption = " " & Format(UBound(mdApp.INumberRollBoard), "#,##0")
+    Me.lbCount(1).Caption = "$ " & Format(mdApp.ICounterRollDec, "#,##0")
 End Sub
