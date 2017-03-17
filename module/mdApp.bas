@@ -9,14 +9,28 @@ Public Const LLGreen As Long = &H80FF80
 Public Const LBlue As Long = &HFF0000
 Public Const LLBlue As Long = &HFFFF80
 
-Public Const IBlank As Integer = 0
+Public Const IBlank As Integer = -1
 Public Const IRowMax As Integer = 20
 Public Const INumberMax As Integer = 36
 Public Const IMax As Integer = 450
 
+Public Const INone As Integer = 0
+Public Const ITick As Integer = 1
+Public Const ICross As Integer = 2
+
 Public LColorPattern() As Long
 Public INumberRollBoard() As Integer
+Public IBlack1RollBoard() As Integer
+Public IRollB1Pattern() As Integer
+Public IRollB2Pattern() As Integer
+Public IRollB3Pattern() As Integer
+Public IRollB4Pattern() As Integer
 Public ICounterRollDec As Integer
+
+Public BBlack1LastFocus(65535) As Boolean
+Public BBlack2LastFocus(65335) As Boolean
+Public BBlack3LastFocus(65335) As Boolean
+Public BBlack4LastFocus(65335) As Boolean
 
 Private IBlack1Score As Integer
 Private IBlack2Score As Integer
@@ -89,6 +103,16 @@ End Sub
 
 Public Sub InitRollBoard()
     ReDim INumberRollBoard(0) As Integer
+    ReDim IBlack1RollBoard(0) As Integer
     
     INumberRollBoard(0) = IBlank
+    IBlack1RollBoard(0) = IBlank
+End Sub
+
+Public Sub SetBlack1RollBoard(ByVal IValue As Integer)
+    If Not (IBlack1RollBoard(UBound(IBlack1RollBoard)) = IBlank) Then
+        ReDim Preserve IBlack1RollBoard(UBound(IBlack1RollBoard) + 1) As Integer
+    End If
+    
+    IBlack1RollBoard(UBound(IBlack1RollBoard)) = IValue
 End Sub

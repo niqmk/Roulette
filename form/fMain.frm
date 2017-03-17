@@ -966,79 +966,319 @@ Begin VB.Form fMain
       TabIndex        =   0
       Top             =   720
       Width           =   4695
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   0
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   168
+         Top             =   600
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   1
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   167
+         Top             =   960
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   2
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   166
+         Top             =   1320
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   3
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   165
+         Top             =   1680
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   4
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   164
+         Top             =   2040
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   5
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   163
+         Top             =   2400
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   6
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   162
+         Top             =   2760
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   7
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   161
+         Top             =   3120
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   8
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   160
+         Top             =   3480
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   9
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   159
+         Top             =   3840
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   10
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   158
+         Top             =   4200
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   11
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   157
+         Top             =   4560
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   12
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   156
+         Top             =   4920
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   13
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   155
+         Top             =   5280
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   14
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   154
+         Top             =   5640
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   15
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   153
+         Top             =   6000
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   16
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   152
+         Top             =   6360
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   17
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   151
+         Top             =   6720
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   18
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   150
+         Top             =   7080
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack4 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   19
-         Left            =   2760
+         Left            =   3840
+         ScaleHeight     =   375
+         ScaleWidth      =   495
+         TabIndex        =   149
+         Top             =   7440
+         Width           =   495
+      End
+      Begin VB.PictureBox pcBlack3 
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         Height          =   375
+         Index           =   19
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   101
          Top             =   7440
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   18
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   100
          Top             =   7080
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   17
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   99
          Top             =   6720
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   16
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   98
          Top             =   6360
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   15
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   97
          Top             =   6000
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   14
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   96
          Top             =   5640
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1050,7 +1290,7 @@ Begin VB.Form fMain
          Top             =   7440
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1062,7 +1302,7 @@ Begin VB.Form fMain
          Top             =   7080
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1074,7 +1314,7 @@ Begin VB.Form fMain
          Top             =   6720
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1086,7 +1326,7 @@ Begin VB.Form fMain
          Top             =   6360
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1098,7 +1338,7 @@ Begin VB.Form fMain
          Top             =   6000
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1115,7 +1355,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   19
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1128,7 +1368,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   18
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1141,7 +1381,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   17
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1154,7 +1394,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   16
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1167,7 +1407,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   15
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1180,7 +1420,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   14
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1188,151 +1428,151 @@ Begin VB.Form fMain
          Top             =   5640
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   13
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   58
          Top             =   5280
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   12
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   57
          Top             =   4920
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   11
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   56
          Top             =   4560
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   10
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   55
          Top             =   4200
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   9
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   54
          Top             =   3840
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   8
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   53
          Top             =   3480
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   7
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   52
          Top             =   3120
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   6
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   51
          Top             =   2760
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   5
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   50
          Top             =   2400
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   4
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   49
          Top             =   2040
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   3
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   48
          Top             =   1680
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   2
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   47
          Top             =   1320
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1344,7 +1584,7 @@ Begin VB.Form fMain
          Top             =   5280
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1356,7 +1596,7 @@ Begin VB.Form fMain
          Top             =   4920
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1368,7 +1608,7 @@ Begin VB.Form fMain
          Top             =   4560
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1380,7 +1620,7 @@ Begin VB.Form fMain
          Top             =   4200
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1392,7 +1632,7 @@ Begin VB.Form fMain
          Top             =   3840
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1404,7 +1644,7 @@ Begin VB.Form fMain
          Top             =   3480
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1416,7 +1656,7 @@ Begin VB.Form fMain
          Top             =   3120
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1428,7 +1668,7 @@ Begin VB.Form fMain
          Top             =   2760
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1440,7 +1680,7 @@ Begin VB.Form fMain
          Top             =   2400
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1452,7 +1692,7 @@ Begin VB.Form fMain
          Top             =   2040
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1464,7 +1704,7 @@ Begin VB.Form fMain
          Top             =   1680
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1481,7 +1721,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   13
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1494,7 +1734,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   12
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1507,7 +1747,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   11
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1520,7 +1760,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   10
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1533,7 +1773,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   9
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1546,7 +1786,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   8
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1559,7 +1799,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   7
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1572,7 +1812,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   6
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1585,7 +1825,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   5
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1598,7 +1838,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   4
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1611,7 +1851,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   3
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1632,19 +1872,19 @@ Begin VB.Form fMain
          Top             =   1320
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   1
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   46
          Top             =   960
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -1661,7 +1901,7 @@ Begin VB.Form fMain
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   1
-         Left            =   1080
+         Left            =   960
          ScaleHeight     =   25
          ScaleMode       =   3  'Pixel
          ScaleWidth      =   33
@@ -1669,19 +1909,19 @@ Begin VB.Form fMain
          Top             =   960
          Width           =   495
       End
-      Begin VB.PictureBox pcHigh 
+      Begin VB.PictureBox pcBlack3 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
          Index           =   0
-         Left            =   2760
+         Left            =   2880
          ScaleHeight     =   375
          ScaleWidth      =   495
          TabIndex        =   45
          Top             =   600
          Width           =   495
       End
-      Begin VB.PictureBox pcEven 
+      Begin VB.PictureBox pcBlack2 
          BackColor       =   &H00F0F0F0&
          BorderStyle     =   0  'None
          Height          =   375
@@ -2433,7 +2673,7 @@ Private Sub SetInitial()
     Else
         Me.lbCount(0).Caption = " " & Format(UBound(mdApp.INumberRollBoard) + 1, "#,##0")
     End If
-    Me.lbCount(1).Caption = " " & Format(mdApp.ICounterRollDec, "#,##0")
+    Me.lbCount(1).Caption = "$ " & Format(mdApp.ICounterRollDec, "#,##0")
 End Sub
 
 Private Sub SetRoll(ByVal IRoll As Integer, Optional ByVal BAlert As Boolean = True)
@@ -2449,7 +2689,7 @@ Private Sub SetRoll(ByVal IRoll As Integer, Optional ByVal BAlert As Boolean = T
     mdAPI.Beep 300, 50
     
     Me.lbCount(0).Caption = " " & Format(UBound(mdApp.INumberRollBoard) + 1, "#,##0")
-    Me.lbCount(1).Caption = " " & Format(mdApp.ICounterRollDec, "#,##0")
+    Me.lbCount(1).Caption = "$ " & Format(mdApp.ICounterRollDec, "#,##0")
 End Sub
 
 Private Sub SetRollBoard()
@@ -2470,6 +2710,47 @@ Private Sub SetRollBoard()
         For ICounter = IRDraw To UBound(mdApp.INumberRollBoard)
             Me.lbRoll(ICDraw).ForeColor = mdApp.LColorPattern(mdApp.INumberRollBoard(ICounter))
             Me.lbRoll(ICDraw).Caption = CStr(mdApp.INumberRollBoard(ICounter))
+            
+            If mdApp.INumberRollBoard(ICounter) = mdApp.INone Then
+                If mdApp.BBlack1LastFocus(ICounter) Then
+                    Set Me.pcBlack(ICDraw).Picture = Me.pcNoneLast
+                Else
+                    Set Me.pcBlack(ICDraw).Picture = Me.pcNone
+                End If
+                
+                If mdApp.BBlack2LastFocus(ICounter) Then
+                    Set Me.pcBlack2(ICDraw).Picture = Me.pcNoneLast
+                Else
+                    Set Me.pcBlack2(ICDraw).Picture = Me.pcNone
+                End If
+                
+                If mdApp.BBlack3LastFocus(ICounter) Then
+                    Set Me.pcBlack3(ICDraw).Picture = Me.pcNoneLast
+                Else
+                    Set Me.pcBlack3(ICDraw).Picture = Me.pcNone
+                End If
+                
+                If mdApp.BBlack4LastFocus(ICounter) Then
+                    Set Me.pcBlack4(ICDraw).Picture = Me.pcNoneLast
+                Else
+                    Set Me.pcBlack4(ICDraw).Picture = Me.pcNone
+                End If
+            Else
+                If mdApp.LColorPattern(mdApp.INumberRollBoard(ICounter)) = mdApp.LRed Then
+                    If mdApp.BBlack1LastFocus(ICounter) Then
+                        Set Me.pcBlack(ICDraw).Picture = Me.pcCrossLast
+                    Else
+                        Set Me.pcBlack(ICDraw).Picture = Me.pcCross
+                    End If
+                Else
+                    If mdApp.BBlack1LastFocus(ICounter) Then
+                        Set Me.pcBlack(ICDraw).Picture = Me.pcTickLast
+                    Else
+                        Set Me.pcBlack(ICDraw).Picture = Me.pcTick
+                    End If
+                End If
+            End If
+            
             ICDraw = ICDraw + 1
         Next ICounter
     End If
@@ -2477,4 +2758,22 @@ End Sub
 
 Private Sub SetBoardPattern(ByVal IRoll As Integer, Optional ByVal BAlert As Boolean = True)
     mdApp.SetNumberRollBoard IRoll
+    
+    ReDim Preserve mdApp.IRollB1Pattern(UBound(mdApp.INumberRollBoard)) As Integer
+    ReDim Preserve mdApp.IRollB2Pattern(UBound(mdApp.INumberRollBoard)) As Integer
+    ReDim Preserve mdApp.IRollB3Pattern(UBound(mdApp.INumberRollBoard)) As Integer
+    ReDim Preserve mdApp.IRollB4Pattern(UBound(mdApp.INumberRollBoard)) As Integer
+    
+    mdApp.IRollB1Pattern(UBound(mdApp.IRollB1Pattern)) = IBlank
+    mdApp.IRollB2Pattern(UBound(mdApp.IRollB2Pattern)) = IBlank
+    mdApp.IRollB3Pattern(UBound(mdApp.IRollB3Pattern)) = IBlank
+    mdApp.IRollB4Pattern(UBound(mdApp.IRollB4Pattern)) = IBlank
+    
+     If mdApp.LColorPattern(IRoll) = mdApp.LRed Then
+        mdApp.SetBlack1RollBoard mdApp.ICross
+    ElseIf LColorPattern(IRoll) = mdApp.LBlack Then
+        mdApp.SetBlack1RollBoard mdApp.ITick
+    ElseIf LColorPattern(IRoll) = mdApp.LGreen Then
+        mdApp.SetBlack1RollBoard mdApp.INone
+    End If
 End Sub
