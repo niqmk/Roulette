@@ -26,8 +26,7 @@ Public Const INone As Integer = 0
 Public Const ITick As Integer = 1
 Public Const ICross As Integer = 2
 
-Public Const IBlack1Type As Integer = 1
-Public Const IBlack2Type As Integer = 1
+Public Const IBlackType As Integer = 1
 
 Public LColorPattern() As Long
 Public INumberRollBoard() As Integer
@@ -63,6 +62,11 @@ Public IBlack4Score As Integer
 Public IBlack1Focus As Integer
 
 Public BBlack1 As Boolean
+
+Private BBlack1Pattern As Boolean
+Private BBlack2Pattern As Boolean
+Private BBlack3Pattern As Boolean
+Private BBlack4Pattern As Boolean
 
 Private IWin As Integer
 Private ILoss As Integer
@@ -152,7 +156,7 @@ Public Sub InitRollPattern()
     ReDim IBlack3RollPattern(0) As Integer
     ReDim IBlack4RollPattern(0) As Integer
     
-    IBlack2RollPattern(0) = IBlank
+    IBlack1RollPattern(0) = IBlank
     IBlack2RollPattern(0) = IBlank
     IBlack3RollPattern(0) = IBlank
     IBlack4RollPattern(0) = IBlank
@@ -212,7 +216,7 @@ Public Sub SetBlack1Box(ByVal IType As WinLossBox)
 End Sub
 
 Public Function CheckFocus(ByVal IType As Integer) As Integer
-    If IType = IBlack1Type Then
+    If IType = IBlackType Then
         CheckFocus = IBlack1Focus
     End If
 End Function
@@ -235,4 +239,79 @@ Public Sub SetWinLoss(Optional ByVal BWin As Boolean = False)
             ILoss = ILoss + 1
         End If
     End If
+End Sub
+
+Public Sub SetWin(Optional ByVal IValue As Integer = 0)
+    IWin = IValue
+End Sub
+
+Public Sub SetLoss(Optional ByVal IValue As Integer = 0)
+    ILoss = IValue
+End Sub
+
+Public Sub CheckSubtWinLoss(ByVal IBlack1RollTemp As Integer, ByVal IBlack2RollTemp As Integer, ByVal IBlack3RollTemp As Integer, ByVal IBlack4RollTemp As Integer)
+    If CheckBlack Then
+        If IBlack1RollTemp = INone Then
+            If ILoss > 0 Then
+                ILoss = ILoss - 1
+            Else
+                IWin = IWin + 1
+            End If
+        Else
+            If BBlack1Pattern Then
+                If IBlack1RollTemp = ITick Then
+                    If IWin > 0 Then
+                        IWin = IWin - 1
+                    Else
+                        ILoss = ILoss + 1
+                    End If
+                Else
+                    If ILoss > 0 Then
+                        ILoss = ILoss - 1
+                    Else
+                        IWin = IWin + 1
+                    End If
+                End If
+            Else
+                If IBlack1RollTemp = ICross Then
+                    If IWin > 0 Then
+                        IWin = IWin - 1
+                    Else
+                        ILoss = ILoss + 1
+                    End If
+                Else
+                    If ILoss > 0 Then
+                        ILoss = ILoss - 1
+                    Else
+                        IWin = IWin + 1
+                    End If
+                End If
+            End If
+        End If
+    End If
+End Sub
+
+Public Sub SetRefreshWinLoss()
+    SetWin
+    SetLoss
+    
+    If UBound(INumberRollBoard) > 5 Then Exit Sub
+    
+    Dim IPattern(5) As Integer
+    Dim ICounter As Integer
+    
+    For ICounter = UBound(INumberRollBoard) To LBound(INumberRollBoard) Step -1
+        If ICounter > 5 Then
+            IPattern(5) = IBlack1RollPattern(ICounter)
+            IPattern(4) = IBlack1RollPattern(ICounter - 1)
+            IPattern(3) = IBlack1RollPattern(ICounter - 2)
+            IPattern(2) = IBlack1RollPattern(ICounter - 3)
+            IPattern(1) = IBlack1RollPattern(ICounter - 4)
+            IPattern(0) = IBlack1RollPattern(ICounter - 5)
+        
+            mdPattern.CheckProbPattern IPattern, False, False, True
+        Else
+            Exit For
+        End If
+    Next ICounter
 End Sub

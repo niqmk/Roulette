@@ -2748,7 +2748,7 @@ Private Sub SetRollFocus()
     Dim ICounter As Integer
     Dim ICDraw As Integer
 
-    IBlack1Focus = mdApp.CheckFocus(IBlack1Type)
+    IBlack1Focus = mdApp.CheckFocus(IBlackType)
     If IBlack1Focus = 1 Then
         IBlack1Focus = 5
     ElseIf IBlack1Focus > 1 Then
@@ -2768,6 +2768,10 @@ Private Sub SetRollFocus()
             End If
             
             For ICounter = UBound(mdApp.INumberRollBoard) To (UBound(mdApp.INumberRollBoard) - IBlackFocus) Step -1
+                If ICounter < 0 Then
+                    Exit For
+                End If
+                
                 mdApp.BBlack1LastFocus(ICounter) = True
                 
                 If mdApp.INumberRollBoard(ICounter) = mdApp.INone Then
@@ -2914,7 +2918,7 @@ Private Sub SetBetText(Optional ByVal BClear As Boolean = True, Optional ByVal B
     End If
 End Sub
 
-Private Sub SetDelete()
+Private Sub SetClear()
     Dim ICounter As Integer
     
     For ICounter = 0 To mdApp.IRowMax - 1
@@ -2936,4 +2940,116 @@ Private Sub SetDelete()
     
     Me.lbCount(0).Caption = " " & Format(UBound(mdApp.INumberRollBoard), "#,##0")
     Me.lbCount(1).Caption = "$ " & Format(mdApp.ICounterRollDec, "#,##0")
+End Sub
+
+Private Sub SetDelete()
+    Dim IBlack1RollTemp As Integer
+    Dim IBlack2RollTemp As Integer
+    Dim IBlack3RollTemp As Integer
+    Dim IBlack4RollTemp As Integer
+    
+    If UBound(mdApp.INumberRollBoard) <= 0 Then
+        mdApp.INumberRollBoard(0) = mdApp.IBlank
+        mdApp.IBlack1RollBoard(0) = mdApp.IBlank
+        mdApp.IBlack2RollBoard(0) = mdApp.IBlank
+        mdApp.IBlack3RollBoard(0) = mdApp.IBlank
+        mdApp.IBlack4RollBoard(0) = mdApp.IBlank
+        mdApp.IBlack1RollPattern(0) = mdApp.IBlank
+        mdApp.IBlack2RollPattern(0) = mdApp.IBlank
+        mdApp.IBlack3RollPattern(0) = mdApp.IBlank
+        mdApp.IBlack4RollPattern(0) = mdApp.IBlank
+        
+        Me.lbRoll(0).Caption = ""
+        
+        Set Me.pcBlack(0).Picture = LoadPicture
+        Set Me.pcBlack2(0).Picture = LoadPicture
+        Set Me.pcBlack3(0).Picture = LoadPicture
+        Set Me.pcBlack4(0).Picture = LoadPicture
+        
+        SetBetText
+        
+        mdApp.BBlack1LastFocus(0) = False
+        mdApp.BBlack2LastFocus(0) = False
+        mdApp.BBlack3LastFocus(0) = False
+        mdApp.BBlack4LastFocus(0) = False
+    Else
+        IBlack1RollTemp = mdApp.IBlack1RollBoard(UBound(mdApp.IBlack1RollBoard))
+        IBlack2RollTemp = mdApp.IBlack2RollBoard(UBound(mdApp.IBlack2RollBoard))
+        IBlack3RollTemp = mdApp.IBlack3RollBoard(UBound(mdApp.IBlack3RollBoard))
+        IBlack4RollTemp = mdApp.IBlack4RollBoard(UBound(mdApp.IBlack3RollBoard))
+        
+        mdApp.BBlack1LastFocus(UBound(mdApp.INumberRollBoard)) = False
+        mdApp.BBlack2LastFocus(UBound(mdApp.INumberRollBoard)) = False
+        mdApp.BBlack3LastFocus(UBound(mdApp.INumberRollBoard)) = False
+        mdApp.BBlack4LastFocus(UBound(mdApp.INumberRollBoard)) = False
+        
+        ReDim Preserve mdApp.INumberRollBoard(UBound(mdApp.INumberRollBoard) - 1) As Integer
+        ReDim Preserve mdApp.IBlack1RollBoard(UBound(mdApp.IBlack1RollBoard) - 1) As Integer
+        ReDim Preserve mdApp.IBlack1RollPattern(UBound(mdApp.IBlack1RollPattern) - 1) As Integer
+        ReDim Preserve mdApp.IRollB1Pattern(UBound(mdApp.INumberRollBoard)) As Integer
+        ReDim Preserve mdApp.IRollB2Pattern(UBound(mdApp.INumberRollBoard)) As Integer
+        ReDim Preserve mdApp.IRollB3Pattern(UBound(mdApp.INumberRollBoard)) As Integer
+        ReDim Preserve mdApp.IRollB4Pattern(UBound(mdApp.INumberRollBoard)) As Integer
+        
+        If UBound(mdApp.INumberRollBoard) >= (mdApp.IRowMax) Then
+            SetRollBoard
+        Else
+            Dim IRCounter As Integer
+            Dim ICounter As Integer
+            
+            IRCounter = (mdApp.IRowMax - 1) - (mdApp.IRowMax - UBound(mdApp.INumberRollBoard) - 1)
+            
+            For ICounter = 0 To mdApp.IRowMax - 1
+                If ICounter > IRCounter Then
+                    Me.lbRoll(ICounter).Caption = ""
+                    
+                    Set Me.pcBlack(ICounter).Picture = LoadPicture
+                    Set Me.pcBlack2(ICounter).Picture = LoadPicture
+                    Set Me.pcBlack3(ICounter).Picture = LoadPicture
+                    Set Me.pcBlack4(ICounter).Picture = LoadPicture
+                Else
+                    Me.lbRoll(ICounter).ForeColor = mdApp.LColorPattern(mdApp.INumberRollBoard(ICounter))
+                    Me.lbRoll(ICounter).Caption = CStr(mdApp.INumberRollBoard(ICounter))
+            
+                    If mdApp.INumberRollBoard(ICounter) = INone Then
+                        Set Me.pcBlack(ICounter).Picture = Me.pcNone
+                        Set Me.pcBlack2(ICounter).Picture = Me.pcNone
+                        Set Me.pcBlack3(ICounter).Picture = Me.pcNone
+                        Set Me.pcBlack4(ICounter).Picture = Me.pcNone
+                    Else
+                        If mdApp.LColorPattern(mdApp.INumberRollBoard(ICounter)) = mdApp.LRed Then
+                            Set Me.pcBlack(ICounter).Picture = Me.pcCross
+                        Else
+                            Set Me.pcBlack(ICounter).Picture = Me.pcTick
+                        End If
+                    End If
+                End If
+            Next ICounter
+        End If
+        
+        SetBetText False
+        
+        mdApp.CheckSubtWinLoss IBlack1RollTemp, IBlack2RollTemp, IBlack3RollTemp, IBlack4RollTemp
+        
+        If IBlack1RollTemp = mdApp.ITick Then
+        ElseIf IBlack1RollTemp = mdApp.INone Then
+        Else
+        End If
+    End If
+    
+    If mdApp.INumberRollBoard(UBound(mdApp.INumberRollBoard)) = IBlank Then
+        Me.lbCount(0).Caption = " " & Format(UBound(mdApp.INumberRollBoard), "#,##0")
+        
+        mdApp.ICounterRollDec = mdApp.IMax
+        
+        mdApp.SetRefreshWinLoss
+    Else
+        Me.lbCount(0).Caption = " " & Format(UBound(mdApp.INumberRollBoard) + 1, "#,##0")
+        
+        If mdApp.ICounterRollDec < mdApp.IMax Then mdApp.ICounterRollDec = mdApp.ICounterRollDec + 1
+    End If
+    
+    Me.lbCount(1).Caption = "$ " & Format(mdApp.ICounterRollDec, "#,##0")
+    
+    SetRollFocus
 End Sub

@@ -35,7 +35,7 @@ Public Function CheckPattern(Optional ByVal BAlert As Boolean = True) As String
     CheckPattern = SValue
 End Function
 
-Private Function CheckProbPattern(ByRef IPattern() As Integer, Optional ByVal BScore As Boolean = True, Optional ByVal BFocus As Boolean = True, Optional ByVal BWinLoss As Boolean = False) As String
+Public Function CheckProbPattern(ByRef IPattern() As Integer, Optional ByVal BScore As Boolean = True, Optional ByVal BFocus As Boolean = True, Optional ByVal BWinLoss As Boolean = False) As String
     Dim ICounter As Integer
     Dim BTripleBlackTick As Boolean
     Dim BTripleBlackCross As Boolean
@@ -44,11 +44,15 @@ Private Function CheckProbPattern(ByRef IPattern() As Integer, Optional ByVal BS
     
     CheckProbPattern = ""
     
-    If UBound(IPattern) < 3 Then
+    If UBound(IPattern) < 2 Then
         Exit Function
     End If
     
     SOutput = ""
+    
+    Dim BValid As Boolean
+    
+    BValid = False
     
     For ICounter = UBound(IPattern) To UBound(IPattern) - 3 Step -4
         SValue = ""
@@ -67,9 +71,53 @@ Private Function CheckProbPattern(ByRef IPattern() As Integer, Optional ByVal BS
     Next ICounter
     
     If BTripleBlackTick Then
-        SValue = SetText(IBlack1Type, IText1)
+        SValue = SetText(IBlackType, IText1)
+        BValid = True
     ElseIf BTripleBlackCross Then
-        SValue = SetText(IBlack1Type, IText2)
+        SValue = SetText(IBlackType, IText2)
+        BValid = True
+    End If
+    
+    If BValid Then
+        CheckProbPattern = SValue
+        Exit Function
+    End If
+    
+    Dim BZigZag As Boolean
+    
+    For ICounter = UBound(IPattern) To UBound(IPattern) - 3 Step -4
+        SValue = ""
+        BZigZag = False
+        
+        If IPattern(ICounter) = mdApp.ITick And IPattern(ICounter - 1) = mdApp.ICross And IPattern(ICounter - 2) = mdApp.ITick Then
+            BZigZag = True
+        End If
+    Next ICounter
+    
+    If BZigZag Then
+        SValue = SetText(IBlackType, IText2)
+        BValid = True
+    End If
+    
+    If BValid Then
+        CheckProbPattern = SValue
+        Exit Function
+    End If
+    
+    Dim BDoubleTag As Boolean
+    
+    For ICounter = UBound(IPattern) To UBound(IPattern) - 4 Step -5
+        SValue = ""
+        BDoubleTag = False
+        
+        If IPattern(ICounter) = mdApp.ICross And IPattern(ICounter - 1) = mdApp.ICross And IPattern(ICounter - 2) = mdApp.ITick And IPattern(ICounter - 3) = mdApp.ITick Then
+            BDoubleTag = True
+        End If
+    Next ICounter
+    
+    If BDoubleTag Then
+        SValue = SetText(IBlackType, IText1)
+        BValid = True
     End If
     
     CheckProbPattern = SValue
@@ -78,7 +126,7 @@ End Function
 Private Function SetText(ByVal IType As Integer, ByVal IValue As Integer, Optional ByVal BBet As Boolean = True, Optional ByVal BCheck As Boolean = True)
     SetText = ""
     
-    If IType = IBlack1Type Then
+    If IType = IBlackType Then
         If IValue = IText1 Then
             SetText = SBlackText
             
