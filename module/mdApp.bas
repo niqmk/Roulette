@@ -34,10 +34,14 @@ Public IBlack1RollBoard() As Integer
 Public IBlack2RollBoard() As Integer
 Public IBlack3RollBoard() As Integer
 Public IBlack4RollBoard() As Integer
+Public IBlack5RollBoard() As Integer
+Public IBlack6RollBoard() As Integer
 Public IBlack1RollPattern() As Integer
 Public IBlack2RollPattern() As Integer
 Public IBlack3RollPattern() As Integer
 Public IBlack4RollPattern() As Integer
+Public IBlack5RollPattern() As Integer
+Public IBlack6RollPattern() As Integer
 Public IRollB1Pattern() As Integer
 Public IRollB2Pattern() As Integer
 Public IRollB3Pattern() As Integer
@@ -48,16 +52,22 @@ Public BBlack1LastFocus(65535) As Boolean
 Public BBlack2LastFocus(65335) As Boolean
 Public BBlack3LastFocus(65335) As Boolean
 Public BBlack4LastFocus(65335) As Boolean
+Public BBlack5LastFocus(65335) As Boolean
+Public BBlack6LastFocus(65335) As Boolean
 
 Public IBlack1Box(11) As Integer
 Public IBlack2Box(11) As Integer
 Public IBlack3Box(11) As Integer
 Public IBlack4Box(11) As Integer
+Public IBlack5Box(11) As Integer
+Public IBlack6Box(11) As Integer
 
 Public IBlack1Score As Integer
 Public IBlack2Score As Integer
 Public IBlack3Score As Integer
 Public IBlack4Score As Integer
+Public IBlack5Score As Integer
+Public IBlack6Score As Integer
 
 Public IBlack1Focus As Integer
 
@@ -67,6 +77,8 @@ Private BBlack1Pattern As Boolean
 Private BBlack2Pattern As Boolean
 Private BBlack3Pattern As Boolean
 Private BBlack4Pattern As Boolean
+Private BBlack5Pattern As Boolean
+Private BBlack6Pattern As Boolean
 
 Private IWin As Integer
 Private ILoss As Integer
@@ -82,6 +94,8 @@ Public Sub Init()
     IBlack2Score = IBlank
     IBlack3Score = IBlank
     IBlack4Score = IBlank
+    IBlack5Score = IBlank
+    IBlack6Score = IBlank
     
     IBlack1Focus = 0
 End Sub
@@ -224,6 +238,19 @@ End Function
 Public Function CheckBlack() As Boolean
     CheckBlack = BBlack1
 End Function
+
+Public Sub SetNumberFocus(ByVal IType As Integer)
+    If IType = IBlackType Then
+        IBlack1Focus = IBlack1Focus + 1
+    End If
+End Sub
+
+Private Sub SetPatternResult(ByVal SValue As String, ByVal IType As Integer, Optional ByVal BScore As Boolean = True, Optional ByVal BFocus As Boolean = True, Optional ByVal BWinLoss As Boolean = False, Optional ByVal BSkip As Boolean = False)
+    If Not (Trim(SValue) = "") Or BSkip Then
+        If BFocus Then SetNumberFocus IType
+        If BWinLoss Then SetWinLoss True
+    End If
+End Sub
 
 Public Sub SetWinLoss(Optional ByVal BWin As Boolean = False)
     If BWin Then
