@@ -26,7 +26,12 @@ Public Const INone As Integer = 0
 Public Const ITick As Integer = 1
 Public Const ICross As Integer = 2
 
-Public Const IBlackType As Integer = 1
+Public Const IBlack1Type As Integer = 1
+Public Const IBlack2Type As Integer = 2
+Public Const IBlack3Type As Integer = 3
+Public Const IBlack4Type As Integer = 4
+Public Const IBlack5Type As Integer = 5
+Public Const IBlack6Type As Integer = 6
 
 Public LColorPattern() As Long
 Public INumberRollBoard() As Integer
@@ -70,8 +75,18 @@ Public IBlack5Score As Integer
 Public IBlack6Score As Integer
 
 Public IBlack1Focus As Integer
+Public IBlack2Focus As Integer
+Public IBlack3Focus As Integer
+Public IBlack4Focus As Integer
+Public IBlack5Focus As Integer
+Public IBlack6Focus As Integer
 
 Public BBlack1 As Boolean
+Public BBlack2 As Boolean
+Public BBlack3 As Boolean
+Public BBlack4 As Boolean
+Public BBlack5 As Boolean
+Public BBlack6 As Boolean
 
 Private BBlack1Pattern As Boolean
 Private BBlack2Pattern As Boolean
@@ -97,7 +112,12 @@ Public Sub Init()
     IBlack5Score = IBlank
     IBlack6Score = IBlank
     
-    IBlack1Focus = 0
+    IBlack1Focus = -1
+    IBlack2Focus = -1
+    IBlack3Focus = -1
+    IBlack4Focus = -1
+    IBlack5Focus = -1
+    IBlack6Focus = -1
 End Sub
 
 Public Sub SetNumberRollBoard(ByVal IValue As Integer, Optional ByVal BTable As Boolean = True)
@@ -229,29 +249,6 @@ Public Sub SetBlack1Box(ByVal IType As WinLossBox)
     End If
 End Sub
 
-Public Function CheckFocus(ByVal IType As Integer) As Integer
-    If IType = IBlackType Then
-        CheckFocus = IBlack1Focus
-    End If
-End Function
-
-Public Function CheckBlack() As Boolean
-    CheckBlack = BBlack1
-End Function
-
-Public Sub SetNumberFocus(ByVal IType As Integer)
-    If IType = IBlackType Then
-        IBlack1Focus = IBlack1Focus + 1
-    End If
-End Sub
-
-Private Sub SetPatternResult(ByVal SValue As String, ByVal IType As Integer, Optional ByVal BScore As Boolean = True, Optional ByVal BFocus As Boolean = True, Optional ByVal BWinLoss As Boolean = False, Optional ByVal BSkip As Boolean = False)
-    If Not (Trim(SValue) = "") Or BSkip Then
-        If BFocus Then SetNumberFocus IType
-        If BWinLoss Then SetWinLoss True
-    End If
-End Sub
-
 Public Sub SetWinLoss(Optional ByVal BWin As Boolean = False)
     If BWin Then
         If ILoss > 0 Then
@@ -277,7 +274,7 @@ Public Sub SetLoss(Optional ByVal IValue As Integer = 0)
 End Sub
 
 Public Sub CheckSubtWinLoss(ByVal IBlack1RollTemp As Integer, ByVal IBlack2RollTemp As Integer, ByVal IBlack3RollTemp As Integer, ByVal IBlack4RollTemp As Integer)
-    If CheckBlack Then
+    If BBlack1 Then
         If IBlack1RollTemp = INone Then
             If ILoss > 0 Then
                 ILoss = ILoss - 1
@@ -336,7 +333,7 @@ Public Sub SetRefreshWinLoss()
             IPattern(1) = IBlack1RollPattern(ICounter - 4)
             IPattern(0) = IBlack1RollPattern(ICounter - 5)
         
-            mdPattern.CheckProbPattern IPattern, False, False, True
+            mdPattern.CheckProbPattern IPattern, IBlack1Type
         Else
             Exit For
         End If
